@@ -9,4 +9,4 @@ This project implements a simple binary tree structure in Java. It includes the 
 ## Usage
 1. Compile the code:
    ```bash
-   java src/Node.java
+   javac src/Node.java
