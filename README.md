@@ -1,11 +1,12 @@
 # Project 2 Supplement
 
 ## Description
-This project implements a binary tree in Java. The tree supports:
-- Adding nodes with the `insert` method.
-- Printing the structure of the tree with the `dump` method.
+This project implements a simple binary tree structure in Java. It includes the following features:
+- **Node class**: Each node contains a unique ID, an integer value, and links to left and right child nodes.
+- **Insert method**: Adds values to the binary tree while maintaining its structure.
+- **Dump method**: Outputs the tree structure in a formatted string.
 
-## How to Run
-1. Compile the Java code:
+## Usage
+1. Compile the code:
    ```bash
-   java src/Node.java
+   javac src/Node.java
