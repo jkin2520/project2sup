@@ -10,4 +10,20 @@ public class Node {
         this.left = null;
         this.right = null;
     }
+    public void insert(int value) {
+        if (value < this.data) {
+            if (this.left == null) {
+                this.left = new Node(value);
+            } else {
+                this.left.insert(value);
+            }
+        } else {
+            if (this.right == null) {
+                this.right = new Node(value);
+            } else {
+                this.right.insert(value);
+            }
+        }
+    }
+    
 }
