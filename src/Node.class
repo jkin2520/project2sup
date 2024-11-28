@@ -9,22 +9,24 @@ public class Node {
    public final int nodeID;
    public int data;
    private static int counter = 0;
- /**
-     * Constructor to initialize a Node with a given integer value.
-     * @param data The integer value to store in this Node.
-     */
+
+   /**
+    * Constructor to initialize a Node with a given integer value.
+    * @param data The integer value to store in this Node.
+    */
    public Node(int var1) {
       this.data = var1;
       this.nodeID = counter++;
       this.left = null;
       this.right = null;
    }
-/**
-     * Inserts a value into the binary tree. If the value is less than
-     * the current Node's value, it goes to the left child; otherwise,
-     * it goes to the right child.
-     * @param value The value to insert into the tree.
-     */
+
+   /**
+    * Inserts a value into the binary tree. If the value is less than
+    * the current Node's value, it goes to the left child; otherwise,
+    * it goes to the right child.
+    * @param value The value to insert into the tree.
+    */
    public void insert(int var1) {
       if (var1 < this.data) {
          if (this.left == null) {
@@ -37,35 +39,34 @@ public class Node {
       } else {
          this.right.insert(var1);
       }
-
    }
-}
-/**
-     * Dumps the tree structure into a formatted string.
-     * Each level of the tree is represented by a tab character.
-     * @param level The depth of the current Node (used for formatting).
-     * @return A formatted string representation of the tree.
-     */
-    public String dump(int level) {
-        StringBuilder sb = new StringBuilder();
-        sb.append("\t".repeat(level))
-          .append("Node ID: ").append(nodeID)
-          .append(", Data: ").append(data).append("\n");
-        if (this.left != null) sb.append(this.left.dump(level + 1));
-        if (this.right != null) sb.append(this.right.dump(level + 1));
-        return sb.toString();
-    }
 
-    /**
-     * Main method for testing the Node class functionality.
-     * It creates a tree, inserts values, and prints the structure.
-     * @param args Command-line arguments (not used).
-     */
-    public static void main(String[] args) {
-        Node root = new Node(10);
-        root.insert(5);
-        root.insert(15);
+   /**
+    * Dumps the tree structure into a formatted string.
+    * Each level of the tree is represented by a tab character.
+    * @param level The depth of the current Node (used for formatting).
+    * @return A formatted string representation of the tree.
+    */
+   public String dump(int level) {
+      StringBuilder sb = new StringBuilder();
+      sb.append("\t".repeat(level))
+        .append("Node ID: ").append(nodeID)
+        .append(", Data: ").append(data).append("\n");
+      if (this.left != null) sb.append(this.left.dump(level + 1));
+      if (this.right != null) sb.append(this.right.dump(level + 1));
+      return sb.toString();
+   }
 
-        System.out.println(root.dump(0));
-    }
+   /**
+    * Main method for testing the Node class functionality.
+    * It creates a tree, inserts values, and prints the structure.
+    * @param args Command-line arguments (not used).
+    */
+   public static void main(String[] args) {
+      Node root = new Node(10);
+      root.insert(5);
+      root.insert(15);
+
+      System.out.println(root.dump(0));
+   }
 }
